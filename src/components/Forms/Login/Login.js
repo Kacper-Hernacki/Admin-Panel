@@ -49,7 +49,7 @@ function Login() {
           />
           <Controls.Button type="submit" text="Zaloguj sie" />
         </form>
-        <Controls.Button onClick={signIn} text="Login with gmail" />
+        <Controls.Button onClick={signIn} text="zaloguj się przez gmail" />
       </div>
     </div>
   );
