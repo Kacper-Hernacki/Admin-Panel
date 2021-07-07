@@ -1,0 +1,14 @@
+style login button
+add icon of google 
+change sizes
+sidebar styling use % 
+
+bought products 
+
+create the components for functionality with database.
+
+array of items like image, title, description, price type some defaults placeholders.
+
+user url adresses to display images
+
+read react context api, and check useEffect, review react router dom 

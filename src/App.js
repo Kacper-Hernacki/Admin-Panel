@@ -1,40 +1,28 @@
 import styles from './App.css';
-import {
-  Switch, Route, BrowserRouter as Router
-} from "react-router-dom";
-import Sidebar from './components/Sidebar/Sidebar';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/Forms/Login/Login';
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
+import { auth } from './firebase';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    });
+  }, []);
+
   return (
     <div className={styles.main__app}>
-      {!loggedIn? (
-        <Login
-          setter={setLoggedIn}
-        />
-      ) : (
-        <div>
-          <Router>
-            <Sidebar/>
-            <Switch>
-              <Route path="/pillow1"> 
-                
-              </Route>
-              <Route path="/pillow2"> 
-                
-              </Route>
-              <Route path="/pillow3"> 
-                
-              </Route>
-              <Route path="/pillow4"> 
-                
-              </Route>
-            </Switch>
-          </Router>
-        </div>
-      )}
+      <Router>
+        <Switch>{!loggedIn ? <Login /> : <Dashboard />}</Switch>
+      </Router>
     </div>
   );
 }

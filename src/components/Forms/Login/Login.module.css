@@ -1,7 +1,18 @@
-.login{
+.login {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.login__container {
   display: flex;
 }
 
-.login__container{
+.form {
   display: flex;
+  flex-direction: column;
+}
+
+.form > input {
+  margin-bottom: 10px;
 }
