@@ -1,6 +1,11 @@
+<<<<<<< HEAD:src/components/Sidebar/Sidebar.css
 .sidebar {
   display: flex;
   background-color: #253053;
+=======
+.sidebar{
+  display:'flex';
+>>>>>>> 0d76e2c4d8b971f2fbd6754ba2812006a08465de:src/components/Sidebar/Sidebar.module.css
   /* flex-direction:'column';
   position:'absolute';
   left:'0px';
