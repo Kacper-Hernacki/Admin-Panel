@@ -8,7 +8,7 @@ function Sidebar() {
       <h1 className="sidebar__option">option 1</h1>
       <h1 className="sidebar__option">option 2</h1>
       <h1 className="sidebar__option">option 3</h1>
-      <h1 className="sidebar__option">option 4</h1>
+      <h1 className="sidebar__option">Decoupage</h1>
     </div>
   );
 }

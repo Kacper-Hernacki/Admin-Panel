@@ -1,0 +1,49 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar_selected {
+  background-color: #2a3039 !important;
+}
+
+.navBar__left {
+  display: flex;
+  flex: 1;
+  padding: 8px;
+  padding-right: 0px;
+  background-color: #121923;
+  align-items: center;
+}
+
+.navBar__leftButton {
+  margin-right: 3.333% !important;
+  width: 30%;
+  height: 30px !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+.navBar__leftButton:hover {
+  background-color: #2a3039 !important;
+}
+
+.MuiSvgIcon-root {
+  font-weight: bold !important;
+  margin-left: 5px !important;
+}
+
+.navBar__right {
+  background-color: #121923;
+  padding: 8px;
+}
+
+.navBar__logout {
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  box-shadow: none !important;
+  color: #121923;
+}

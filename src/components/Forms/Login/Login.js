@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './Login.module.css';
 import { Controls } from '../../controls/Controls';
 import { auth, provider } from '../../../firebase';
+import { useStateValue } from '../../../StateProvider';
+import { actionTypes } from '../../../reducer';
 
 //import DashboardIcon from '@material-ui/icons/Dashboard';
 //import NightsStayIcon from '@material-ui/icons/NightsStay';
@@ -13,7 +15,7 @@ function Login() {
   // const { setter } = props;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [state, dispatch] = useStateValue();
   //Auth123456.
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,11 +27,18 @@ function Login() {
       .catch((e) => alert('not allowed'));
   };
 
-  const signIn = () => {
-    auth.signInWithPopup(provider).catch((error) => alert(error.message));
+  const signIn = (e) => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+      })
+      .catch((error) => alert(error.message));
   };
-
-  console.log(email, password);
 
   return (
     <div className={styles.login}>
@@ -42,14 +51,21 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            placeholder=""
+            placeholder="password"
             value={password}
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <Controls.Button type="submit" text="Zaloguj sie" />
+          <div className>
+            <img src="/public/images/google.png" alt="" />
+            <Controls.Button
+              onClick={signIn}
+              text="Login with gmail"
+              styles={styles.googleButton}
+            />
+          </div>
         </form>
-        <Controls.Button onClick={signIn} text="Login with gmail" />
       </div>
     </div>
   );
