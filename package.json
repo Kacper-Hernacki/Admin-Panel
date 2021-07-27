@@ -5,10 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-<<<<<<< HEAD
-=======
     "axios": "^0.21.1",
->>>>>>> 0d76e2c4d8b971f2fbd6754ba2812006a08465de
     "firebase": "^8.6.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
