@@ -6,14 +6,12 @@ import { useStateValue } from '../../StateProvider';
 import NavBar from '../NavBar/NavBar.js';
 
 function Dashboard() {
-  // const [{ user }, dispatch] = useStateValue();
+  const [{ sidebar }, dispatch] = useStateValue();
 
   return (
     <div>
       <NavBar />
-
-      <Sidebar />
-      <Controls.Button text="Wyloguj" onClick={() => auth.signOut()} />
+      {sidebar === true && <Sidebar />}
     </div>
   );
 }

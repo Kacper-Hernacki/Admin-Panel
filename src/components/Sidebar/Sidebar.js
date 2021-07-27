@@ -1,14 +1,27 @@
 import './Sidebar.css';
-
+import { Button } from '@material-ui/core';
 import React from 'react';
 
 function Sidebar() {
+  const pillowCasesHandler = () => {};
+  const pillowsHandler = () => {};
+  const othersHandler = () => {};
+  const decoupageHandler = () => {};
+
   return (
     <div className="sidebar">
-      <h1 className="sidebar__option">option 1</h1>
-      <h1 className="sidebar__option">option 2</h1>
-      <h1 className="sidebar__option">option 3</h1>
-      <h1 className="sidebar__option">option 4</h1>
+      <Button className="sidebar__option active" onClick={pillowCasesHandler}>
+        Pillow Cases
+      </Button>
+      <Button className="sidebar__option" onClick={pillowsHandler}>
+        Pillows
+      </Button>
+      <Button className="sidebar__option" onClick={othersHandler}>
+        Others
+      </Button>
+      <Button className="sidebar__option" onClick={decoupageHandler}>
+        Decoupage
+      </Button>
     </div>
   );
 }
